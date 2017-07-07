@@ -1,3 +1,5 @@
+[500px] Added respec integration so you can run bundle exec rake knapsack:respec
+
 [Knapsack, The K is silent](http://www.youtube.com/watch?v=-Ae590hensE)
 
 # ![Knapsack logo](docs/images/logos/knapsack-logo-@2.png)
@@ -50,7 +52,7 @@ How knapsack_pro makes my life easier as opposed to regular knapsack gem?
 
 * The knapsack_pro version has queue mode designed for optimal test suite split thanks to dynamic tests allocation.
 * With the knapsack_pro version the setup and the ongoing work is easier because you don’t have to manually generate knapsack json report with test files time execution for each test suite like rspec, cucumber etc.
-* The knapsack_pro version tracks all you branches so when your test code changes the knapsack_pro tries to provide you as optimal test suite split as possible. 
+* The knapsack_pro version tracks all you branches so when your test code changes the knapsack_pro tries to provide you as optimal test suite split as possible.
 * When your test codebase changes over time you need to manually generate a new knapsack report in free gem version which is extra overhead and waste of time of the developer.
 
 **Would you like to try [knapsack_pro gem](https://github.com/KnapsackPro/knapsack_pro-ruby) with more features and free access for early users? Please [visit Knapsack Pro](http://knapsackpro.com?utm_source=github&utm_medium=readme&utm_campaign=knapsack_gem&utm_content=try_knapsack_pro).**
@@ -333,7 +335,7 @@ For instance to run verbose tests:
 Add arguments to knapsack spinach task like this:
 
     $ bundle exec rake "knapsack:spinach[--name feature]"
-    
+
 ### Knapsack binary
 
 You can install knapsack globally and use binary. For instance:

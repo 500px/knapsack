@@ -23,7 +23,7 @@ require_relative 'knapsack/runners/rspec_runner'
 require_relative 'knapsack/runners/cucumber_runner'
 require_relative 'knapsack/runners/minitest_runner'
 require_relative 'knapsack/runners/spinach_runner'
-
+require_relative 'knapsack/runners/respec_runner'
 module Knapsack
   class << self
     @@logger = nil

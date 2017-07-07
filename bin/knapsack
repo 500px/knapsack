@@ -10,6 +10,7 @@ MAP = {
   'cucumber' => Knapsack::Runners::CucumberRunner,
   'minitest' => Knapsack::Runners::MinitestRunner,
   'spinach' => Knapsack::Runners::SpinachRunner,
+  'respec' => Knapsack::Runners::RespecRunner,ß
 }
 
 runner_class = MAP[runner]
