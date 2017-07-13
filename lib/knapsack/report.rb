@@ -20,8 +20,8 @@ module Knapsack
         #read in the entire json into a variable, add the new one(s) into the hash, write the result
         existing_times = JSON.parse(f.read.delete!("\n")).to_hash #convert file to hash so we can merge in
         new_times = report_json.to_hash
-        merged_times = existing_times.merge(new_times) unless new_times.nil? || existing_times.nil?
-        final_copy = JSON.pretty_generate(merged_times)
+        existing_times = existing_times.merge(new_times) unless new_times.nil? || existing_times.nil?
+        final_copy = JSON.pretty_generate(existing_times)
         f.write(final_copy)
 
       end
