@@ -15,9 +15,15 @@ module Knapsack
         update_report_config
 
         if tracker.config[:generate_report]
-          Knapsack.logger.info 'Knapsack report generator started!'
-          bind_time_tracker
-          bind_report_generator
+          if tracker.config[:merge_report]
+            Knapsack.logger.info 'Knapsack report generator started. Will merge into existing report.'
+            bind_time_tracker
+            bind_report_merger
+          else
+            Knapsack.logger.info 'Knapsack report generator started!'
+            bind_time_tracker
+            bind_report_generator
+          end
         elsif tracker.config[:enable_time_offset_warning]
           Knapsack.logger.info 'Knapsack time offset warning enabled!'
           bind_time_tracker

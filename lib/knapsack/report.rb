@@ -16,6 +16,12 @@ module Knapsack
     end
 
     def save
+      File.open(report_path, 'w+') do |f|
+        f.write(report_json)
+      end
+    end
+
+    def save_and_merge
       File.open(report_path, 'a+') do |f|
         #read in the entire json into a variable, add the new one(s) into the hash, write the result
         existing_times = JSON.parse(f.read.delete!("\n")).to_hash #convert file to hash so we can merge in
@@ -24,7 +30,6 @@ module Knapsack
         final_copy = JSON.pretty_generate(existing_times)
         f.truncate(0) # clear existing content
         f.write(final_copy)
-
       end
     end
 

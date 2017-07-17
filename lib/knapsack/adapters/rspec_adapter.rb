@@ -36,6 +36,15 @@ module Knapsack
         end
       end
 
+      def bind_report_merger
+        ::RSpec.configure do |config|
+          config.after(:suite) do
+            Knapsack.report.save_and_merge
+            Knapsack.logger.info(Presenter.report_details)
+          end
+        end
+      end
+
       def bind_time_offset_warning
         ::RSpec.configure do |config|
           config.after(:suite) do
