@@ -24,6 +24,8 @@ module Knapsack
             bind_time_tracker
             bind_report_generator
           end
+          bind_time_offset_warning
+
         elsif tracker.config[:enable_time_offset_warning]
           Knapsack.logger.info 'Knapsack time offset warning enabled!'
           bind_time_tracker
