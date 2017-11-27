@@ -14,6 +14,10 @@ module Knapsack
           ENV['CI_NODE_INDEX'] || ENV['CIRCLE_NODE_INDEX'] || semaphore_current_thread || ENV['BUILDKITE_PARALLEL_JOB'] || snap_ci_worker_index || 0
         end
 
+        def test_env_number
+          ENV['TEST_ENV_NUMBER'].to_i || 0
+        end
+
         def test_file_pattern
           ENV['KNAPSACK_TEST_FILE_PATTERN']
         end

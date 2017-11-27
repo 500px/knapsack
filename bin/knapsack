@@ -11,6 +11,7 @@ MAP = {
   'minitest' => Knapsack::Runners::MinitestRunner,
   'spinach' => Knapsack::Runners::SpinachRunner,
   'respec' => Knapsack::Runners::RespecRunner,
+  'respec_parallel' => Knapsack::Runners::RespecParallelRunner
 }
 
 runner_class = MAP[runner]

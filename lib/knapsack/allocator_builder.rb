@@ -13,6 +13,15 @@ module Knapsack
         ci_node_index: Knapsack::Config::Env.ci_node_index
       })
     end
+    
+    def parallel_allocator
+      Knapsack::Allocator.new({
+        report: Knapsack.report.open,
+        test_file_pattern: test_file_pattern,
+        ci_node_total: Knapsack::Config::Env.ci_node_total * 2,
+        ci_node_index: Knapsack::Config::Env.ci_node_index * 2 + Knapsack::Config::Env.test_env_number #index should range from 0 to 11
+      })
+    end
 
     def test_dir
       Knapsack::Config::Env.test_dir || test_file_pattern.split('/').first
